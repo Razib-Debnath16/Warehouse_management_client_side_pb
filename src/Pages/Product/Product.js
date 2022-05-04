@@ -1,9 +1,14 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const Product = (params) => {
 
-    const { name, img, description, price } = params.product;
+    const { _id, name, img, description, price } = params.product;
+    const navigate = useNavigate();
+    const navigateDetails = (id) => {
+        navigate(`/inventory/${id}`);
+    }
     return (
         <div>
             <Card style={{ width: '18rem' }}>
@@ -13,7 +18,7 @@ const Product = (params) => {
                     <Card.Text>
                         {description}
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Button onClick={() => navigateDetails(_id)} variant="primary">Go somewhere</Button>
                 </Card.Body>
             </Card>
         </div>
