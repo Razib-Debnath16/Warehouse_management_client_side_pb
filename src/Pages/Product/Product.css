@@ -1,0 +1,12 @@
+.card {
+    height: 500px;
+    width: 350px;
+}
+
+
+.card-button {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

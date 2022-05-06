@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import './Product.css';
 
 const Product = (params) => {
 
@@ -10,17 +11,20 @@ const Product = (params) => {
         navigate(`/inventory/${id}`);
     }
     return (
-        <div>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={img} />
-                <Card.Body>
-                    <Card.Title>{name}</Card.Title>
-                    <Card.Text>
-                        {description}
-                    </Card.Text>
-                    <Button onClick={() => navigateDetails(_id)} variant="primary">Go somewhere</Button>
-                </Card.Body>
-            </Card>
+        <div className='product'>
+            <div >
+                <Card className='card'>
+                    <Card.Img variant="top" src={img} />
+                    <Card.Body>
+                        <Card.Title>{name}</Card.Title>
+                        <Card.Text>
+                            {description}
+                        </Card.Text>
+                    </Card.Body>
+                    <Button className='card-button' onClick={() => navigateDetails(_id)} variant="primary">Go somewhere</Button>
+                </Card>
+            </div>
+
         </div>
     );
 };

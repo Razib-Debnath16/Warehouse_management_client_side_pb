@@ -10,6 +10,7 @@ const Header = () => {
     const logout = () => {
         signOut(auth);
     }
+    console.log(user);
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="primary" sticky='top' variant="dark">
@@ -18,13 +19,18 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link style={{ color: 'white' }} href="home#items">Items</Nav.Link>
+                            <Nav.Link style={{ color: 'white' }} as={Link} to="/manageInventories">Manage Inventory</Nav.Link>
                             <Nav.Link style={{ color: 'white' }} href="home#reviews">Review</Nav.Link>
                             <Nav.Link style={{ color: 'white' }} href="blogs">Blogs</Nav.Link>
                         </Nav>
                         <Nav>
                             {user ?
-                                <Button onClick={logout} variant="primary">Log out</Button>
+                                <div>
+                                    <Button variant="primary">Manage Items</Button>
+                                    <Navbar.Brand as={Link} to="/addItems">Add Item</Navbar.Brand>
+                                    <Button variant="primary">My Items</Button>
+                                    <Button onClick={logout} variant="primary">Log out</Button>
+                                </div>
                                 :
                                 <Nav.Link style={{ color: 'white' }} as={Link} to="/Login">
                                     Login

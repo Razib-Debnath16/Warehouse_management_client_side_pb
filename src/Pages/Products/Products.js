@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import useItems from '../../Hooks/useItems';
 import Product from '../Product/Product';
 import './Products.css';
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, []);
+    const [products, setProducts] = useItems();
 
     return (
-        <div id='items' className='product-container'>
-            {
-                products.map(product => <Product key={product._id} product={product}></Product>)
-            }
+        <div>
+            <h2 className='text-center'>Items</h2>
+            <div className='product-container'>
+                {
+                    products.slice(0, 6).map(product => <Product key={product._id} product={product}></Product>)
+                }
+            </div>
+
         </div>
     );
 };
