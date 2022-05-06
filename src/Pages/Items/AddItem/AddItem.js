@@ -4,13 +4,26 @@ import './AddItem.css';
 
 const AddItem = () => {
     const handleAddItem = (event) => {
-        event.PreventDefault();
+        event.preventDefault();
         const name = event.target.name.value;
         const price = event.target.price.value;
         const description = event.target.description.value;
         const img = event.target.img.value;
         const sold = event.target.sold.value;
         const quantity = event.target.quantity.value;
+        const supplierName = event.target.supplierName.value;
+        const data = {
+            name, price, description, img, sold, quantity, supplierName
+        };
+        fetch('http://localhost:5000/products', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data));
     }
     return (
         <div className='add-items'>
