@@ -1,8 +1,10 @@
 .inventory {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    /* display: grid;
+    grid-template-columns: 2fr 1fr; */
 }
 
 .product-details {
     display: flex;
+    width: 50%;
+    margin: auto;
 }

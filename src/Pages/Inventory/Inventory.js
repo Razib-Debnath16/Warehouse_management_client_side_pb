@@ -14,27 +14,23 @@ const Inventory = () => {
     }, [])
     return (
         <div className='inventory'>
-            <div>
-                <Card >
-                    <div className='product-details w-50 mx-auto'>
-                        <Card.Img style={{ width: '15rem' }} variant="top" src={product.img} />
-                        <Card.Body style={{ width: '15rem' }}>
-                            <Card.Title>{product.name}</Card.Title>
-                            <Card.Text className='container-fluid'>
-                                {product.description}
-                            </Card.Text>
-                            <Card.Text className='container-fluid'>
-                                {product.price}
-                            </Card.Text>
-                            <Card.Text className='container-fluid'>
-                                {product.description}
-                            </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
-                        </Card.Body>
-                    </div>
-                </Card>
+            <div className='product-details'>
+                <div>
+                    <img src={product.img} alt="" />
+                </div>
+                <div>
+                    <h2>Name : {product.name}</h2>
+                    <p>Description : {product.description}</p>
+                    <p>Price : {product.price}</p>
+                    <p>Quantity : {product.quantity}</p>
+                    <p>Sold : {product.sold}</p>
+                    <p>Supplier Name : {product.supplierName}</p>
+                    <Button variant="success" type="submit">
+                        Delivered
+                    </Button>
+                </div>
             </div>
-            <div>
+            <div className='w-50 mx-auto'>
                 <div>
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">

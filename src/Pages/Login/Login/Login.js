@@ -6,6 +6,7 @@ import auth from '../../../firebase.init';
 import { async } from '@firebase/util';
 import { toast } from 'react-toastify';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import './Login.css';
 
 const Login = () => {
     const [agree, setAgree] = useState(false);
@@ -60,8 +61,8 @@ const Login = () => {
         navigate('/login');
     }
     return (
-        <div>
-            <div>
+        <div className='login'>
+            <div className='login-form'>
                 <h2 className='text-primary text-center'>Please Login</h2>
                 <Form onSubmit={handleLoginSubmit} className='container w-50 mx-auto'>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -85,7 +86,7 @@ const Login = () => {
                     <p className='text-danger'>{errorMessage}</p>
                 </Form>
             </div>
-            <div>
+            <div className='social-login'>
                 <SocialLogin></SocialLogin>
             </div>
         </div>

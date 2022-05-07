@@ -20,6 +20,7 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/manageInventories' element={<ManageInventories></ManageInventories>}></Route>
         <Route path='/inventory/:id' element={
           <RequireAuth>

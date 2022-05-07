@@ -39,8 +39,8 @@ const Register = () => {
         navigate('/login');
     }
     return (
-        <div>
-            <div>
+        <div className='login'>
+            <div className='login-form'>
                 <h2 className='text-primary text-center'>Please Register</h2>
                 <Form onSubmit={handleRegisterSubmit} className='container w-50 mx-auto'>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -66,7 +66,7 @@ const Register = () => {
                     <p className='text-danger'>{errorMessage}</p>
                 </Form>
             </div>
-            <div>
+            <div className='social-login'>
                 <SocialLogin></SocialLogin>
             </div>
         </div>
