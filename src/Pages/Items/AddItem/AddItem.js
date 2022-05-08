@@ -1,8 +1,12 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 import './AddItem.css';
 
 const AddItem = () => {
+    const [user] = useAuthState(auth);
+    console.log(user);
     const handleAddItem = (event) => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -12,8 +16,9 @@ const AddItem = () => {
         const sold = event.target.sold.value;
         const quantity = event.target.quantity.value;
         const supplierName = event.target.supplierName.value;
+        const email = user.email;
         const data = {
-            name, price, description, img, sold, quantity, supplierName
+            name, price, description, img, sold, quantity, supplierName, email
         };
         fetch('http://localhost:5000/products', {
             method: 'POST',
@@ -23,37 +28,33 @@ const AddItem = () => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(data => console.log(data));
+        // .then(data => console.log(data));
     }
     return (
         <div className='add-items'>
             <Form onSubmit={handleAddItem}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-
+                    <Form.Control readOnly type="email" placeholder={user.email} />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control type="name" name='name' placeholder="Product Name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-
                     <Form.Control type="text-area" name='description' placeholder="Description" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-
                     <Form.Control type="text" name='price' placeholder="Price" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-
                     <Form.Control type="text" name='quantity' placeholder="Quantity" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-
                     <Form.Control type="text" name='supplierName' placeholder="Supplier Name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-
                     <Form.Control type="text" name='sold' placeholder="Sold" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-
                     <Form.Control type="text" name='img' placeholder="Image url" />
                 </Form.Group>
                 <Button className='w-100' variant="primary" type="submit">

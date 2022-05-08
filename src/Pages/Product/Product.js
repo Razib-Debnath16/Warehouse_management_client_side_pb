@@ -21,7 +21,7 @@ const Product = (params) => {
                             {description}
                         </Card.Text>
                     </Card.Body>
-                    <Button className='card-button' onClick={() => navigateDetails(_id)} variant="primary">Go somewhere</Button>
+                    <Button className='card-button' onClick={() => navigateDetails(_id)} variant="primary">Product details</Button>
                 </Card>
             </div>
 

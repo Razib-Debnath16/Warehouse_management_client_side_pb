@@ -3,3 +3,9 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 30px;
 }
+
+.addbutton {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
