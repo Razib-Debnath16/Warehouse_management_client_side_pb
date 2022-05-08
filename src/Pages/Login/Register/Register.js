@@ -25,7 +25,7 @@ const Register = () => {
         // update User-name
         await updateProfile({ displayName: name });
         console.log('Updated profile');
-        navigate('/login');
+        navigate('/');
     }
     if (loading) {
         <Loading></Loading>

@@ -18,7 +18,7 @@ const Product = (params) => {
                     <Card.Body>
                         <Card.Title>Name :{name}</Card.Title>
                         <Card.Text style={{ height: '100px' }}>
-                            Specification : {description.slice(0, 200) + '...'}
+                            Specification : {description.slice(0, 250) + '...'}
                         </Card.Text>
                         <Card.Text>
                             Price :{price}
@@ -36,7 +36,6 @@ const Product = (params) => {
                     <Button className='card-button' onClick={() => navigateDetails(_id)} variant="primary">Update Item</Button>
                 </Card>
             </div>
-
         </div>
     );
 };

@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css';
 import Loading from '../../Shared/Loading/Loading';
+import axios from 'axios';
 
 const Login = () => {
     const [agree, setAgree] = useState(false);
@@ -30,7 +31,12 @@ const Login = () => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+        const { data } = await axios.post('http://localhost:5000/login', { email })
+        // console.log(data);
+        localStorage.setItem('accessToken', data.accessToken);
+        navigate(from, { replace: true });
+
 
     }
     const ResetPassword = async () => {
@@ -46,7 +52,7 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || "/";
     if (user) {
-        navigate(from, { replace: true });
+        // 
     }
     if (loading) {
         <Loading></Loading>

@@ -1,12 +1,15 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import './AddItem.css';
 
 const AddItem = () => {
     const [user] = useAuthState(auth);
-    console.log(user);
+    const navigate = useNavigate();
+    // console.log(user);
+    const email = user?.email;
     const handleAddItem = (event) => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -16,7 +19,6 @@ const AddItem = () => {
         const sold = event.target.sold.value;
         const quantity = event.target.quantity.value;
         const supplierName = event.target.supplierName.value;
-        const email = user.email;
         const data = {
             name, price, description, img, sold, quantity, supplierName, email
         };
@@ -30,11 +32,14 @@ const AddItem = () => {
             .then(res => res.json())
         // .then(data => console.log(data));
     }
+    if (!email) {
+        navigate('/')
+    }
     return (
         <div className='add-items'>
             <Form onSubmit={handleAddItem}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control readOnly type="email" placeholder={user.email} />
+                    <Form.Control readOnly type="email" placeholder={user?.email} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control type="name" name='name' placeholder="Product Name" />

@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "name": "Archimedes",
+        "rating": 4.5,
+        "img": "https://i.ibb.co/syWdKV5/2.jpg",
+        "review": "Trusted..Their products are authentic"
+    },
+    {
+        "id": "2",
+        "name": "Leonardo da Vinci",
+        "rating": 4.7,
+        "img": "https://i.ibb.co/FqZhZcj/1.jpg",
+        "review": "I just love their products.just Awesome"
+    },
+    {
+        "id": "3",
+        "name": "John Dalton",
+        "rating": 5,
+        "img": "https://i.ibb.co/CstJdgC/3.jpg",
+        "review": "Their service is appreciable..Recommended"
+    }
+]
