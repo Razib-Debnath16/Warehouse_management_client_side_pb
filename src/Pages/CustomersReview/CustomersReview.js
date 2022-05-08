@@ -4,7 +4,7 @@ import Review from './Review/Review';
 const CustomersReview = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('reviews.json')
+        fetch('http://localhost:5000/myProducts')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

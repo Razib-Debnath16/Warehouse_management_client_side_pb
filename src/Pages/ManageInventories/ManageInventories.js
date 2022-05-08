@@ -13,8 +13,8 @@ const ManageInventories = () => {
     }
     return (
         <div>
-            <div className='w-50 mx-auto'>
-                <Button className='addbutton' onClick={handleNewItem} variant="primary">Add New Item</Button>
+            <div className='w-25 my-3 mx-auto'>
+                <Button className='inventory-button' onClick={handleNewItem} variant="primary">Add New Item</Button>
             </div>
             <div className='table-container'>
                 {

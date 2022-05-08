@@ -30,7 +30,6 @@ const Header = () => {
                         <Nav>
                             {user ?
                                 <div>
-                                    <Button variant="primary">Manage Items</Button>
                                     <Navbar.Brand as={Link} to="/addItems">Add Item</Navbar.Brand>
                                     <Button onClick={myItems} variant="primary">My Items</Button>
                                     <Button onClick={logout} variant="primary">Log out</Button>

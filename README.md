@@ -6,6 +6,33 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### Website Name
+
+( Thor's Collection )
+
+### Live Website Link 
+
+( )
+
+### Description 
+
+* This project is based on warehouse management.
+* In the home section we have a navbar, then we show some of our products.then we show some of customers review and our payment method.
+* In the inventory section we can add quantity of an individual item and delivered option.
+* In the additems section we can add new products.
+* one blog section where we answed some questions.
+* if user is login we can manage some section.
+
+### Technology Used
+
+* react router
+* react bootstrap
+* firebase
+* react firebase hooks
+* react toastify
+* mongodb
+* express js
+
 ### `npm start`
 
 Runs the app in the development mode.\
