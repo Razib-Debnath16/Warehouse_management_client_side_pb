@@ -7,6 +7,7 @@ import { async } from '@firebase/util';
 import { toast } from 'react-toastify';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css';
+import Loading from '../../Shared/Loading/Loading';
 
 const Login = () => {
     const [agree, setAgree] = useState(false);
@@ -48,7 +49,7 @@ const Login = () => {
         navigate(from, { replace: true });
     }
     if (loading) {
-
+        <Loading></Loading>
     }
     let errorMessage;
     if (error) {

@@ -1,6 +1,12 @@
 .card {
-    height: 500px;
+    /* height: 500px; */
     width: 350px;
+    border: 1px solid gray;
+    background-color: lightcyan;
+}
+
+.card img {
+    height: 350px;
 }
 
 

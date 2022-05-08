@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
@@ -24,10 +25,10 @@ const Register = () => {
         // update User-name
         await updateProfile({ displayName: name });
         console.log('Updated profile');
-        navigate('/home');
+        navigate('/login');
     }
     if (loading) {
-
+        <Loading></Loading>
     }
     let errorMessage;
     if (error) {

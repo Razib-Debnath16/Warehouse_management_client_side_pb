@@ -13,6 +13,7 @@ import ManageInventories from './Pages/ManageInventories/ManageInventories';
 import AddItem from './Pages/Items/AddItem/AddItem';
 import ManageItems from './Pages/Items/ManageItems/ManageItems';
 import MyItems from './Pages/Items/MyItems/MyItems';
+import NotFound from './Pages/Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path='/myItems' element={<MyItems></MyItems>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
     </div>
