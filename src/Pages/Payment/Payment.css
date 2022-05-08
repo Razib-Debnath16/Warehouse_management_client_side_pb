@@ -1,0 +1,10 @@
+.payment {
+    display: flex;
+
+}
+
+.payment img {
+    width: 400px;
+    height: 300px;
+
+}

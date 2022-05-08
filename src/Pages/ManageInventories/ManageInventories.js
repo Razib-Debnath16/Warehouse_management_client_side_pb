@@ -14,7 +14,7 @@ const ManageInventories = () => {
     return (
         <div>
             <div className='w-50 mx-auto'>
-                <Button className='addbutton' onClick={handleNewItem} variant="outline-info">Add New Item</Button>
+                <Button className='addbutton' onClick={handleNewItem} variant="primary">Add New Item</Button>
             </div>
             <div className='table-container'>
                 {

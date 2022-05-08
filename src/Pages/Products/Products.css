@@ -3,3 +3,10 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 80px;
 }
+
+.inventory-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

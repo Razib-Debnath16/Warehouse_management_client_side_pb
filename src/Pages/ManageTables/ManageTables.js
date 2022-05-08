@@ -28,7 +28,7 @@ const ManageTables = (params) => {
     }
     return (
         <div>
-            <Table striped bordered hover variant="BLUE">
+            <Table striped bordered hover variant="Responsive">
                 <thead>
                     <tr>
                         <th>Product Name</th>
