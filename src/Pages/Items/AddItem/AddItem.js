@@ -22,7 +22,7 @@ const AddItem = () => {
         const data = {
             name, price, description, img, sold, quantity, supplierName, email
         };
-        fetch('https://lit-escarpment-53151.herokuapp.com/products', {
+        fetch('https://warehouse-management-g5te.onrender.com/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -16,7 +16,7 @@ const MyItem = (params) => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `https://lit-escarpment-53151.herokuapp.com/product/${id}`;
+            const url = `https://warehouse-management-g5te.onrender.com/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

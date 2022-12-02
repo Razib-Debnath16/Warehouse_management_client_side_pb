@@ -9,7 +9,7 @@ const Banner = () => {
     return (
         <Carousel className='banner'>
             <Carousel.Item>
-                <img style={{ height: '550px' }}
+                <img style={{ height: '500px' }}
                     className="d-block w-100"
                     src={banner1}
                     alt="First slide"
